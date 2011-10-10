@@ -14,9 +14,13 @@ Then /^he should see "([^"]*)"$/ do |message|
 end
 
 When /^he tries to login with an invalid username$/ do
-  pending # express the regexp above with the code you wish you had
+  visit(login_path)
+  fill_in('Username', with: 'garbage')
+  fill_in('Password', with: 'password')
+  click_on('Login')
 end
 
 Then /^he should be asked to try again$/ do
-  pending # express the regexp above with the code you wish you had
+  current_path.should eq(sessions_path)
+  page.should have_content("Invalid username or password")
 end
