@@ -11,9 +11,10 @@ Feature: User Login
   Scenario: User tries to login with an invalid username
     Given the user "Marc" has an account
     When he tries to login with an invalid username
-    Then he should be asked to try again
+    Then he should be asked to try logging in again
 
   Scenario: User tries to login with an invalid password
     Given the user "Marc" has an account
     When he tries to login with an invalid password
-    Then he should be asked to try again
+    Then he should be asked to try logging in again
+

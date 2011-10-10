@@ -18,7 +18,7 @@ Then /^he should see "([^"]*)"$/ do |message|
   page.should have_content(message)
 end
 
-Then /^he should be asked to try again$/ do
+Then /^he should be asked to try logging in again$/ do
   current_path.should eq(sessions_path)
-  page.should have_content("Invalid username or password")
+  page.should have_content("Invalid username or password. Please try again.")
 end
