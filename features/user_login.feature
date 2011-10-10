@@ -7,3 +7,8 @@ Feature: User Login
     Given the user "Marc" has an account
     When he logs in
     Then he should see "Welcome, Marc"
+
+  Scenario: User tries to login with invalid username
+    Given the user "Marc" has an account
+    When he tries to login with an invalid username
+    Then he should be asked to try again
