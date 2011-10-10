@@ -6,12 +6,16 @@ When /^he logs in$/ do
   login(@user.username, @user.password)
 end
 
-Then /^he should see "([^"]*)"$/ do |message|
-  page.should have_content(message)
-end
-
 When /^he tries to login with an invalid username$/ do
   login('garbage', 'password')
+end
+
+When /^he tries to login with an invalid password$/ do
+  login(@user.username, 'wrongpassword')
+end
+
+Then /^he should see "([^"]*)"$/ do |message|
+  page.should have_content(message)
 end
 
 Then /^he should be asked to try again$/ do
