@@ -12,6 +12,10 @@
     <p>Welcome, <%= current_user.username %></p>
   <% end -%>
 
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash#{name}", class: "#{name}" %>
+  <% end %>
+
 <%= yield %>
 
 </body>
