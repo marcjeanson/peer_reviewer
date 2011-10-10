@@ -3,10 +3,7 @@ Given /^the user "([^"]*)" has an account$/ do |username|
 end
 
 When /^he logs in$/ do
-  visit(login_path)
-  fill_in('Username', with: @user.username)
-  fill_in('Password', with: @user.password)
-  click_on('Login')
+  login(@user.username, @user.password)
 end
 
 Then /^he should see "([^"]*)"$/ do |message|
@@ -14,10 +11,7 @@ Then /^he should see "([^"]*)"$/ do |message|
 end
 
 When /^he tries to login with an invalid username$/ do
-  visit(login_path)
-  fill_in('Username', with: 'garbage')
-  fill_in('Password', with: 'password')
-  click_on('Login')
+  login('garbage', 'password')
 end
 
 Then /^he should be asked to try again$/ do
