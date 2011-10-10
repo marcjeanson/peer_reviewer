@@ -18,3 +18,7 @@ Feature: User Login
     When he tries to login with an invalid password
     Then he should be asked to try logging in again
 
+  Scenario: User logs out
+    Given a logged in user
+    When he logs out
+    Then he should be redirected to the login page
