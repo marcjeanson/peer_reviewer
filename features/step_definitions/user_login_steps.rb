@@ -12,3 +12,11 @@ end
 Then /^he should see "([^"]*)"$/ do |message|
   page.should have_content(message)
 end
+
+When /^he tries to login with an invalid username$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^he should be asked to try again$/ do
+  pending # express the regexp above with the code you wish you had
+end
