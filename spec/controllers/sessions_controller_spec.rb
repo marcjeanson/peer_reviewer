@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe SessionsController do
+  let(:user) { stub_model(User) }
 
   describe "GET :new" do
     before { get :new }
@@ -11,7 +12,6 @@ describe SessionsController do
   end
 
   describe "POST :create" do
-    let(:user) { stub_model(User) }
 
     context "valid login" do
       before do
@@ -37,5 +37,20 @@ describe SessionsController do
         session[:user_id].should be_nil
       end
     end
+  end
+
+  describe "DELETE :destroy" do
+    before do
+      session[:user_id] = 1
+      delete :destroy
+    end
+
+    it "clears the user_id from the session" do
+      session[:user_id].should be_nil
+    end
+
+    it { should redirect_to(new_session_path) }
+    it { should_not set_the_flash }
+    it { @controller.current_user.should be_nil }
   end
 end
