@@ -9,4 +9,12 @@ describe SessionsController do
     it { should respond_with(:success) }
     it { should_not set_the_flash }
   end
+
+  describe "POST :create" do
+    before do
+      post :create, :username => 'whatever', :password => 'password'
+    end
+
+    it { should redirect_to('/') }
+  end
 end
