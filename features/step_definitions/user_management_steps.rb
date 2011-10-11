@@ -29,7 +29,7 @@ Then /^I should be on the new user page$/ do
 end
 
 Given /^I am on the new user page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit(new_user_path)
 end
 
 When /^I submit valid new user data$/ do
