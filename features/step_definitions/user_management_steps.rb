@@ -1,8 +1,3 @@
-Given /^a logged in admin user$/ do
-  @admin = User.create! username: 'admin', password: 'password', role: 'admin'
-  login(@admin.username, @admin.password)
-end
-
 Given /^the following users:$/ do |table|
   @users = []
   table.hashes.each do |user|
