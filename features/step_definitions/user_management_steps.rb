@@ -10,7 +10,7 @@ Given /^the following users:$/ do |table|
 end
 
 When /^I visit the user admin page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit(users_path)
 end
 
 Then /^I should see all the users$/ do
