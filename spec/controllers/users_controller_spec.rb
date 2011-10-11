@@ -15,4 +15,18 @@ describe UsersController do
     it { should assign_to(:users).with(users) }
   end
 
+  describe "GET :new" do
+    let(:user) { stub }
+
+    before do
+      User.stub(:new).and_return(user)
+      get :new
+    end
+
+    it { should respond_with(:success) }
+    it { should render_template(:new) }
+    it { should_not set_the_flash }
+    it { should assign_to(:user).with(user) }
+  end
+
 end
