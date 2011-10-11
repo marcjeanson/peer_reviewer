@@ -4,8 +4,9 @@ Given /^a logged in admin user$/ do
 end
 
 Given /^the following users:$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  table.hashes.each do |user|
+    User.create! user.merge(password: 'password', role: 'employee')
+  end
 end
 
 When /^I visit the user admin page$/ do
