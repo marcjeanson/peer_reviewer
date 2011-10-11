@@ -10,6 +10,7 @@
 
   <% if current_user -%>
     <p>Welcome, <%= current_user.username %></p>
+    <p><%= link_to "Reviews", reviews_path %></p>
     <p><%= link_to "Logout", logout_path %></p>
   <% end -%>
 
