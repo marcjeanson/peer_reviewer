@@ -29,6 +29,6 @@ When /^I click on "([^"]*)"$/ do |link|
 end
 
 Then /^I should be on the new user page$/ do
-  pending # express the regexp above with the code you wish you had
+  current_path.should eq(new_user_path)
 end
 
