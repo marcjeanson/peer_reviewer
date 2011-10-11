@@ -24,8 +24,8 @@ Then /^I should see all the users$/ do
   end
 end
 
-When /^I click on "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+When /^I click on "([^"]*)"$/ do |link|
+  click_on(link)
 end
 
 Then /^I should be on the new user page$/ do
