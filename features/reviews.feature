@@ -7,6 +7,10 @@ Feature: Reviews
     Given a logged in manager
 
   Scenario: Navigating to the reviews page
+    Given the following reviews:
+      | title           | start_on   | end_on     |
+      | Quarter Review  | 2011-10-01 | 2011-10-31 |
+      | Annual Review   | 2011-12-01 | 2011-12-31 |
     When I click on "Reviews"
     Then I should be on the reviews page
     And I should see all the reviews

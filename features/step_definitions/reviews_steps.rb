@@ -1,3 +1,7 @@
+Given /^the following reviews:$/ do |reviews|
+  @reviews = reviews.hashes.collect { |review| Review.create!(review) }
+end
+
 Then /^I should be on the reviews page$/ do
   current_path.should eq(reviews_path)
 end
