@@ -24,10 +24,6 @@ Then /^I should see all the users$/ do
   end
 end
 
-When /^I click on "([^"]*)"$/ do |link|
-  click_on(link)
-end
-
 Then /^I should be on the new user page$/ do
   current_path.should eq(new_user_path)
 end
