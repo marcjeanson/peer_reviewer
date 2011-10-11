@@ -33,10 +33,21 @@ Given /^I am on the new user page$/ do
 end
 
 When /^I submit valid new user data$/ do
-  pending # express the regexp above with the code you wish you had
+  fill_in("Username", with: "dvader")
+  fill_in("Password", with: "yodasucks")
+  fill_in("First name", with: "Darth")
+  fill_in("Last name", with: "Vader")
+  select("Manager", from: "Role")
+  click_on("Create")
 end
 
 Then /^I should see the new user in the list of users$/ do
-  pending # express the regexp above with the code you wish you had
+  new_user = User.find_by_username 'dvader'
+  within("#user_#{new_user.id}") do
+    page.should have_content("dvader")
+    page.should have_content("Darth")
+    page.should have_content("Vader")
+    page.should have_content("Manager")
+  end
 end
 
