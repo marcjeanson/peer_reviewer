@@ -19,3 +19,8 @@ Feature: User Management
     Given I visit the user admin page
     When I click on "New User"
     Then I should be on the new user page
+
+  Scenario: Creating a new user
+    Given I am on the new user page
+    When I submit valid new user data
+    Then I should see the new user in the list of users
