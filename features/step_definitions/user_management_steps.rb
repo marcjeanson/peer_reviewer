@@ -1,5 +1,5 @@
 Given /^a logged in admin user$/ do
-  pending # express the regexp above with the code you wish you had
+  @admin = User.create! username: 'admin', password: 'password', role: 'admin'
 end
 
 Given /^the following users:$/ do |table|
