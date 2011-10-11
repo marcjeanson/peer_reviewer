@@ -14,3 +14,8 @@ Feature: User Management
       | lskywalker | Luke       | Skywalker |
     When I visit the user admin page
     Then I should see all the users
+
+  Scenario: Navigating to the new user page
+    Given I visit the user admin page
+    When I click on "New User"
+    Then I should be on the new user page

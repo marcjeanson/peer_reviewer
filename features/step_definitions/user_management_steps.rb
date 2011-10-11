@@ -23,3 +23,12 @@ Then /^I should see all the users$/ do
     end
   end
 end
+
+When /^I click on "([^"]*)"$/ do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should be on the new user page$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
