@@ -4,8 +4,9 @@ Given /^a logged in admin user$/ do
 end
 
 Given /^the following users:$/ do |table|
+  @users = []
   table.hashes.each do |user|
-    User.create! user.merge(password: 'password', role: 'employee')
+    @users << User.create!(user.merge(password: 'password', role: 'employee'))
   end
 end
 
@@ -14,5 +15,11 @@ When /^I visit the user admin page$/ do
 end
 
 Then /^I should see all the users$/ do
-  pending # express the regexp above with the code you wish you had
+  @users.each do |user|
+    within("#user_#{user.id}") do
+      [user.username, user.first_name, user.last_name].each do |content|
+        page.should have_content(content)
+      end
+    end
+  end
 end
