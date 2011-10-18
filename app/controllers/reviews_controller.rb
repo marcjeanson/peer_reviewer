@@ -9,6 +9,10 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new params[:review]
-    redirect_to reviews_path, notice: "The review was created!"
+    if @review.save
+      redirect_to reviews_path, notice: "The review was created!"
+    else
+      render :new
+    end
   end
 end
