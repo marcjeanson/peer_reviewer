@@ -14,3 +14,8 @@ Feature: Reviews
     When I click on "Reviews"
     Then I should be on the reviews page
     And I should see all the reviews
+
+  Scenario: Navigating to the new review page
+    Given I visit the reviews page
+    When I click on "New Review"
+    Then I should be on the new review page
