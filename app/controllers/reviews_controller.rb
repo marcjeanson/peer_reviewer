@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    @review = Review.new params[:review]
     redirect_to reviews_path, notice: "The review was created!"
   end
 end

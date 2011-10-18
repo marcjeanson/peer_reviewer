@@ -31,6 +31,7 @@ describe ReviewsController do
 
   describe "POST :create" do
     before do
+      Review.should_receive(:new).with("title" => "Annual Review")
       post :create, :review => {title: 'Annual Review' }
     end
 
