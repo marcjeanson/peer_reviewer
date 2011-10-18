@@ -29,4 +29,12 @@ describe ReviewsController do
     it { should assign_to(:review).with(review) }
   end
 
+  describe "POST :create" do
+    before do
+      post :create, :review => {title: 'Annual Review' }
+    end
+
+    it { should redirect_to(reviews_path) }
+  end
+
 end

@@ -19,3 +19,8 @@ Feature: Reviews
     Given I visit the reviews page
     When I click on "New Review"
     Then I should be on the new review page
+
+  Scenario: Creating a new review
+    Given I visit the new review page
+    When I submit valid new review data
+    Then I should see the new review in the list of reviews

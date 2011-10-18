@@ -6,4 +6,8 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
   end
+
+  def create
+    redirect_to reviews_path
+  end
 end
