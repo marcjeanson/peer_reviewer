@@ -3,6 +3,10 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
 
+  def show
+    @review = Review.find_by_id params[:id]
+  end
+
   def new
     @review = Review.new
   end

@@ -1,5 +1,5 @@
 <%= content_tag_for(:tr, review) do %>
-  <td><%= review.title %></td>
+  <td><%= link_to review.title, review %></td>
   <td><%= review.start_on %></td>
   <td><%= review.end_on %></td>
 <% end -%>
