@@ -12,6 +12,9 @@ end
 
 When /^I submit valid new review data$/ do
   fill_in("Title", with: "Annual Review")
+  select(Date.today.year.to_s, from: "review_start_on_1i")
+  select(Date::MONTHNAMES[Date.today.month], from: "review_start_on_2i")
+  select(Date.today.day.to_s, from: "review_start_on_3i")
   click_on("Create")
 end
 
