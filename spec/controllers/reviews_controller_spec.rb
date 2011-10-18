@@ -32,13 +32,19 @@ describe ReviewsController do
   describe "POST :create" do
     let(:review) { mock_model(Review, :title => "Annual Review") }
 
-    before do
+    it "creates a new review" do
       Review.should_receive(:new).with("title" => "Annual Review").and_return(review)
       post :create, :review => {title: 'Annual Review' }
     end
 
-    it { should redirect_to(reviews_path) }
-    it { should set_the_flash.to(notice: "The review was created!") }
+    context "when the review saves successfully" do
+      before do
+        post :create
+      end
+
+      it { should redirect_to(reviews_path) }
+      it { should set_the_flash.to(notice: "The review was created!") }
+    end
   end
 
 end
