@@ -35,6 +35,7 @@ describe ReviewsController do
     end
 
     it { should redirect_to(reviews_path) }
+    it { should set_the_flash.to(notice: "The review was created!") }
   end
 
 end
