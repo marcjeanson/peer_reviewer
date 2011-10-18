@@ -1,4 +1,8 @@
 <%= form_tag sessions_path do %>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash#{name}", :class => "#{name}" %>
+  <% end %>
+
   <p>
     <%= label_tag :username %>
     <%= text_field_tag :username, params[:username] %>

@@ -1,3 +1,30 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$background: #E7E4D4;
+
+#login_container form {
+  margin-top: 3em;
+  background: white;
+  padding: 1em;
+  border: 1px solid #BBBBBB;
+}
+
+#login_container form label {
+  display: block;
+  float: left;
+  width: 7em !important;
+}
+
+#login_container input[type=text], input[type=password] {margin:0;}
+
+#login_container form .button {
+  padding-left: 7em !important;
+}
+
+#login_container form img {
+  margin-bottom: 1em;
+}
+
+#login_container.container {
+  padding-top: 10px;
+  min-height: 400px;
+  background: $background;
+}

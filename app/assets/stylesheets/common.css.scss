@@ -1,0 +1,45 @@
+$wine: #5e2558;
+$gold: #C2B636;
+$background: #E7E4D4;
+
+body {
+  background: $background;
+}
+
+thead th {
+  color: white;
+  background: $wine;
+}
+
+tbody tr:nth-child(even) td, tbody tr.even td {
+  background: $background;
+}
+
+a:focus, a:hover {
+  color: $gold;
+}
+a {
+  color: $wine;
+  text-decoration:underline;
+}
+
+form.simple_form label {
+  display: block;
+}
+
+form.simple_form {
+  padding: 1em;
+  border: 1px solid #BBB;
+  background-color: $background;
+  margin-bottom: 1em;
+}
+
+#user_nav {
+  float: right;
+}
+
+.container {
+  padding-top: 10px;
+  background: white;
+  min-height: 400px;
+}

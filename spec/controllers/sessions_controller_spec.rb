@@ -19,7 +19,7 @@ describe SessionsController do
         post :create, :username => 'whatever', :password => 'password'
       end
 
-      it { should redirect_to('/') }
+      it { should redirect_to(reviews_path) }
       it "stores the user_id in the session" do
         session[:user_id].should eq(user.id)
       end

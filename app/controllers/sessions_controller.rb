@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  layout 'login'
+
   def new
   end
 
@@ -6,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.authenticate_for_username(params[:username], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to reviews_path
     else
       flash.now.alert = "Invalid username or password. Please try again."
       render :new
