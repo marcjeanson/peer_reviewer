@@ -30,8 +30,10 @@ describe ReviewsController do
   end
 
   describe "POST :create" do
+    let(:review) { mock_model(Review, :title => "Annual Review") }
+
     before do
-      Review.should_receive(:new).with("title" => "Annual Review")
+      Review.should_receive(:new).with("title" => "Annual Review").and_return(review)
       post :create, :review => {title: 'Annual Review' }
     end
 
