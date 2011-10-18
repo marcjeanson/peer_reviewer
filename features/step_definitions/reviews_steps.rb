@@ -34,8 +34,8 @@ Then /^I should be on the new review page$/ do
 end
 
 Then /^I should see the new review in the list of reviews$/ do
-  new_review = User.find_by_title("Annual Review")
-  within("#review_#{new_user.id}") do
+  new_review = Review.find_by_title("Annual Review")
+  within("#review_#{new_review.id}") do
     page.should have_content("Annual Review")
   end
 end
